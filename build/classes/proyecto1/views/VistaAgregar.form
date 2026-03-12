@@ -49,7 +49,7 @@
                           <Component id="btnCerrar" min="-2" pref="188" max="-2" attributes="0"/>
                           <Component id="btnAgregar" min="-2" pref="188" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="183" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="91" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -102,7 +102,7 @@
                       <Component id="btnCerrar" min="-2" pref="62" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="60" max="32767" attributes="0"/>
+              <EmptySpace pref="62" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -208,7 +208,6 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="e6" red="d2" type="rgb"/>
         </Property>
-        <Property name="actionCommand" type="java.lang.String" value=""/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
             <TitledBorder justification="2" position="4" title="CERRAR"/>

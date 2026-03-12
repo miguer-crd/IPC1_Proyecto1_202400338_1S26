@@ -79,7 +79,6 @@ public class VistaAgregar extends javax.swing.JFrame {
         txtID.setForeground(new java.awt.Color(153, 153, 153));
 
         btnCerrar.setBackground(new java.awt.Color(210, 230, 255));
-        btnCerrar.setActionCommand("");
         btnCerrar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CERRAR", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_BOTTOM));
         btnCerrar.addActionListener(this::btnCerrarActionPerformed);
 
@@ -114,7 +113,7 @@ public class VistaAgregar extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 183, Short.MAX_VALUE))
+                        .addGap(0, 91, Short.MAX_VALUE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -157,7 +156,7 @@ public class VistaAgregar extends javax.swing.JFrame {
                         .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
