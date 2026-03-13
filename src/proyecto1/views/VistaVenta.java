@@ -4,6 +4,9 @@
  */
 package proyecto1.views;
 
+import proyecto1.models.ProductoModels;
+import proyecto1.controllers.ProductoControllers;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Miguer Corado
@@ -11,7 +14,7 @@ package proyecto1.views;
 public class VistaVenta extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaVenta.class.getName());
-
+    private ProductoModels productoEncontrado = null;
     /**
      * Creates new form VistaVenta
      */
@@ -30,6 +33,15 @@ public class VistaVenta extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtID = new javax.swing.JTextField();
+        btnBuscar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
+        txtCantidad = new javax.swing.JTextField();
+        btnVender = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,6 +52,36 @@ public class VistaVenta extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel2.setText("REGISTRA TU VENTA ");
 
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Ingrese ID");
+
+        txtID.setForeground(new java.awt.Color(153, 153, 153));
+        txtID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        btnBuscar.setBackground(new java.awt.Color(210, 230, 255));
+        btnBuscar.setText("BUSCAR");
+        btnBuscar.addActionListener(this::btnBuscarActionPerformed);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Cantidad");
+
+        txtCantidad.setForeground(new java.awt.Color(153, 153, 153));
+        txtCantidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        btnVender.setBackground(new java.awt.Color(210, 230, 255));
+        btnVender.setText("VENDER");
+        btnVender.addActionListener(this::btnVenderActionPerformed);
+
+        btnCerrar.setBackground(new java.awt.Color(210, 230, 255));
+        btnCerrar.setText("CERRAR");
+        btnCerrar.addActionListener(this::btnCerrarActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -49,6 +91,30 @@ public class VistaVenta extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(293, 293, 293))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtID, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBuscar)
+                .addGap(317, 317, 317))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(203, 203, 203)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCantidad))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
+                    .addComponent(btnVender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -57,11 +123,117 @@ public class VistaVenta extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnBuscar)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnVender)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(btnCerrar)
+                .addGap(23, 23, 23))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    //BOTON CERRAR
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+    this.setVisible(false);
+    }//GEN-LAST:event_btnCerrarActionPerformed
+
+    //BOTON BUSCAR
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+     String id = txtID.getText().trim();
+    productoEncontrado = null;
+
+    for (int i = 0; i < ProductoControllers.contador; i++) {
+
+        if (ProductoControllers.productos[i].id.equalsIgnoreCase(id)) {
+
+            productoEncontrado = ProductoControllers.productos[i];
+
+            jTextArea1.setText(
+                    "ID: " + productoEncontrado.id +
+                    "\nNombre: " + productoEncontrado.nombre +
+                    "\nCategoria: " + productoEncontrado.categoria +
+                    "\nPrecio: " + productoEncontrado.precio +
+                    "\nStock: " + productoEncontrado.stock
+            );
+
+            return;
+        }
+    }
+
+    jTextArea1.setText("Producto no encontrado");
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    //BOTON VENDER
+    private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
+    if (productoEncontrado == null) {
+        JOptionPane.showMessageDialog(this, "Primero busque un producto");
+        return;
+    }
+
+    int cantidad;
+
+    try {
+        cantidad = Integer.parseInt(txtCantidad.getText());
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Cantidad inválida");
+        return;
+    }
+
+    if (cantidad <= 0) {
+        JOptionPane.showMessageDialog(this, "Cantidad inválida");
+        return;
+    }
+
+    if (productoEncontrado.stock < cantidad) {
+        JOptionPane.showMessageDialog(this, "Stock insuficiente");
+        return;
+    }
+
+    // RESTAR STOCK
+    productoEncontrado.stock -= cantidad;
+
+    double total = cantidad * productoEncontrado.precio;
+
+    String fechaHora = java.time.LocalDateTime.now().toString();
+
+    try {
+
+        java.io.FileWriter writer = new java.io.FileWriter("ventas.txt", true);
+
+        writer.write(
+                "ID: " + productoEncontrado.id +
+                " | Producto: " + productoEncontrado.nombre +
+                " | Cantidad: " + cantidad +
+                " | Total: " + total +
+                " | Fecha: " + fechaHora
+        );
+
+        writer.close();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error al guardar la venta");
+    }
+
+    JOptionPane.showMessageDialog(this, "Venta registrada");
+
+    jTextArea1.setText("");
+    txtID.setText("");
+    txtCantidad.setText("");
+    productoEncontrado = null;
+    }//GEN-LAST:event_btnVenderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,7 +261,16 @@ public class VistaVenta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCerrar;
+    private javax.swing.JButton btnVender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField txtCantidad;
+    private javax.swing.JTextField txtID;
     // End of variables declaration//GEN-END:variables
 }

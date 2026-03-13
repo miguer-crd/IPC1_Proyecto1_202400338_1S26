@@ -239,7 +239,7 @@ public class VistaAgregar extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new VistaAgregar().setVisible(true));
     }
 
-    //  MÉTODO PARA VER INVENTARIO EN CONSOLA 
+    //  VER INVENTARIO EN CONSOLA 
     private void imprimirInventario() {
         System.out.println("============================== INVENTARIO =============================");
         for (int i = 0; i < ProductoControllers.contador; i++) {

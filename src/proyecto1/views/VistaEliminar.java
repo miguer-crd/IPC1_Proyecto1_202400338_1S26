@@ -56,6 +56,7 @@ public class VistaEliminar extends javax.swing.JFrame {
         jLabel3.setText("Ingrese el ID");
 
         txtID.setForeground(new java.awt.Color(153, 153, 153));
+        txtID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         btnBuscar.setBackground(new java.awt.Color(210, 230, 255));
         btnBuscar.setText("BUSCAR");
@@ -97,7 +98,7 @@ public class VistaEliminar extends javax.swing.JFrame {
                         .addGap(111, 111, 111)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(255, 255, 255)
+                        .addGap(259, 259, 259)
                         .addComponent(btnEliminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -117,17 +118,17 @@ public class VistaEliminar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnBuscar)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEliminar)
                     .addComponent(btnCerrar))
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //BOTON BUSCAR
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
     String id = txtID.getText().trim();
     posicionEncontrada = -1;
@@ -154,10 +155,12 @@ public class VistaEliminar extends javax.swing.JFrame {
     jTextArea1.setText("Producto no encontrado");
     }//GEN-LAST:event_btnBuscarActionPerformed
 
+    //BOTON CERRAR
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnCerrarActionPerformed
 
+    //BOTON ELIMINAR
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         if (posicionEncontrada == -1) {
         JOptionPane.showMessageDialog(this, "Primero busque un producto");
