@@ -16,6 +16,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     VistaBuscar vBuscar = new VistaBuscar();
     VistaEliminar vEliminar = new VistaEliminar();
     VistaVenta vVenta = new VistaVenta();
+    VistaReportes vReportes = new VistaReportes();
     
     /**
      * Creates new form VistaPrincipal
@@ -174,7 +175,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistrarVActionPerformed
 
     private void btnReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportesActionPerformed
-        // TODO add your handling code here:
+        vReportes.setVisible(true);
+        
     }//GEN-LAST:event_btnReportesActionPerformed
 
     private void btnDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatosActionPerformed
