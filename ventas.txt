@@ -1,1 +1,2 @@
-ID: 002 | Producto: Cargo | Cantidad: 10 | Total: 1000.0 | Fecha: 2026-03-12T20:27:02.374226100ID: 001 | Producto: Cargo | Cantidad: 3 | Total: 300.0 | Fecha: 2026-03-12T20:27:11.444499900ID: 004 | Producto: polo | Cantidad: 3 | Total: 390.0 | Fecha: 2026-03-12T20:27:19.819298100
+ID: 001 | Producto: Cargo | Cantidad: 1 | Total: 200.0 | Fecha: 2026-03-13T13:20:43.785876900
+ID: 004 | Producto: Polo | Cantidad: 3 | Total: 690.0 | Fecha: 2026-03-13T13:20:52.682924800

@@ -258,7 +258,7 @@ public class VistaReportes extends javax.swing.JFrame {
         writer.write("</head>");
         writer.write("<body>");
 
-        writer.write("<h1>Reporte de Inventario - BERSHKA</h1>");
+        writer.write("<h1>Reporte de Stock - BERSHKA</h1>");
 
         writer.write("<table>");
 

@@ -218,7 +218,7 @@ public class VistaVenta extends javax.swing.JFrame {
                 " | Producto: " + productoEncontrado.nombre +
                 " | Cantidad: " + cantidad +
                 " | Total: " + total +
-                " | Fecha: " + fechaHora
+                " | Fecha: " + fechaHora + "\n"
         );
 
         writer.close();
